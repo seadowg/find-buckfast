@@ -2,3 +2,7 @@
 # use the cfPush task in Gradle instead
 
 name: find-buckfast-123
+instances: 1
+memory: 512MB
+services:
+    - redis
