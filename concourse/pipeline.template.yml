@@ -1,0 +1,33 @@
+resources:
+  - name: find-buckfast
+    type: git
+    source:
+      uri: https://github.com/seadowg/find-buckfast.git
+      branch: master
+
+  - name: production
+    type: cf
+    source:
+      api: <api>
+      username: <username>
+      password: <password>
+      organization: <organization>
+      space: <space>
+      current_app_name: <app_name>
+
+jobs:
+  - name: test
+    build: find-buckfast/concourse/config/test.yml
+    inputs:
+      - resource: find-buckfast
+
+  - name: deploy
+    build: find-buckfast/concourse/config/deploy.yml
+    inputs:
+      - resource: find-buckfast
+        passed: [test]
+    outputs:
+      - resource: production
+        params:
+          manifest: find-buckfast/manifest.yml
+          path: find-buckfast/build/libs/FindBuckfast-0.0.1.war
