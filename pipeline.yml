@@ -1,0 +1,12 @@
+resources:
+  - name: controller
+    type: git
+    source:
+      uri: https://github.com/seadowg/find-buckfast.git
+      branch: master
+
+jobs:
+  - name: controller-mysql
+    build: controller/ci/mysql.yml
+    inputs:
+      - resource: controller

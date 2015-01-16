@@ -1,0 +1,4 @@
+# this manifest does not contain a path, and so cannot be used directly
+# use the cfPush task in Gradle instead
+
+name: find-buckfast-123
