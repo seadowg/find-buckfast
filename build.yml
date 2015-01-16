@@ -2,7 +2,7 @@
 image: docker:///dockerfile/java#oracle-java8
 
 inputs:
-- name: find-buckfast
+  - name: find-buckfast
 
 run:
   path: find-buckfast/scripts/ci.sh
