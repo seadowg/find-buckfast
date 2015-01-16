@@ -15,9 +15,8 @@ public class MainController {
     @ResponseBody
     public String home() throws IOException {
         Handlebars handlebars = new Handlebars();
-
-        Template template = handlebars.compileInline("Hello, {{this}}!");
-        return template.apply("Buckfast");
+        Template homeTemplate = handlebars.compile("home");
+        return homeTemplate.apply("Buckfast");
     }
 
 }
