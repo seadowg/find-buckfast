@@ -5,4 +5,4 @@ inputs:
   - name: find-buckfast
 
 run:
-  path: find-buckfast/scripts/ci.sh
+  path: find-buckfast/scripts/test.sh
