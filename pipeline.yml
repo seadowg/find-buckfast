@@ -10,3 +10,9 @@ jobs:
     build: find-buckfast/build.yml
     inputs:
       - resource: find-buckfast
+
+  - name: deploy
+    build: find-buckfast/deploy.yml
+    inputs:
+      - resource: find-buckfast
+        passed: [test]
