@@ -5,4 +5,4 @@ inputs:
   - name: find-buckfast
 
 run:
-  path: find-buckfast/scripts/deploy.sh
+  path: find-buckfast/concourse/config/script/test.sh

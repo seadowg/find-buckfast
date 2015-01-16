@@ -7,12 +7,12 @@ resources:
 
 jobs:
   - name: test
-    build: find-buckfast/test.yml
+    build: find-buckfast/concourse/config/test.yml
     inputs:
       - resource: find-buckfast
 
   - name: deploy
-    build: find-buckfast/deploy.yml
+    build: find-buckfast/concourse/config/deploy.yml
     inputs:
       - resource: find-buckfast
         passed: [test]
